@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 const program = require('commander')
+
+const questions = require('./utilities/questions')
+
 const version = '0.1.0'
 
 program
@@ -9,5 +12,7 @@ program
   .parse(process.argv)
 
 if (program.new) {
-  console.log("What's the URL for the book")
+  questions.newBookmark().then((bookmark) => {
+    console.log(bookmark)
+  })
 }
