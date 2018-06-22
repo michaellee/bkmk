@@ -1,0 +1,31 @@
+{
+  "name": "bkmk",
+  "version": "0.1.0",
+  "description": "A command line tool to help you remember where you left off in a book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bkmk": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaellee/bkmk.git"
+  },
+  "keywords": [
+    "bookmark",
+    "cli",
+    "node"
+  ],
+  "author": "Michael Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaellee/bkmk/issues"
+  },
+  "homepage": "https://github.com/michaellee/bkmk#readme",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "inquirer": "^6.0.0"
+  }
+}
