@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 
-const newBookmark = () => {
+function newBookmark() {
   const questions = [
     {
       name: 'title',
@@ -24,13 +24,32 @@ const newBookmark = () => {
         } else {
           return 'Please give your URL a title.'
         }
-        
+
       }
     }
   ]
   return inquirer.prompt(questions)
 }
 
+function listBookmarks(bookmarks) {
+  let stringBookmarks = []
+  bookmarks.forEach(bookmark => {
+    if (bookmark) {
+      stringBookmarks.push(`${bookmark.title} ${bookmark.pageOrUrl}`)
+    }
+  })
+  const prompts = [
+    {
+      name: 'bookmarks',
+      type: 'list',
+      message: "Select a bookmark",
+      choices: stringBookmarks
+    }
+  ]
+  return inquirer.prompt(prompts)
+}
+
 module.exports = {
-  newBookmark
+  newBookmark,
+  listBookmarks
 }
